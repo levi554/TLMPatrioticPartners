@@ -43,6 +43,7 @@ class contact(Person):
         if phone_number not in self.phone_numbers:
             self.phone_numbers.append(phone_number)
 
+
 class Type:
     pass
 
@@ -56,6 +57,25 @@ class PhoneNumber():
             self.uuid = uuid
         self.type = None
         self.phone_number = phone_number
+
+
+class WorkPhoneNumber(PhoneNumber):
+    
+    def __init__(self, phone_number, phone_type, uuid=None):
+        super().__init__(phone_number, phone_type, uuid)
+        self.phone_type = 'Work Phone'
+
+class HomePhoneNumber(PhoneNumber):
+    
+    def __init__(self, phone_number, phone_type, uuid=None):
+        super().__init__(phone_number, phone_type, uuid)
+        self.phone_type = 'Home Phone'
+
+class OtherPhoneNumber(PhoneNumber):
+    
+    def __init__(self, phone_number, phone_type, uuid=None):
+        super().__init__(phone_number, phone_type, uuid)
+        self.phone_type = 'Other Phone'
 
 
 
