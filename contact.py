@@ -8,7 +8,7 @@ class Person:
         self.last_name = last_name
 
 
-class contact(Person):
+class Contact(Person):
 
     def __init__(self, first_name, last_name, addresses=None, phone_numbers=None, email_addresses=None):
         super().__init__(first_name, last_name)
@@ -50,7 +50,7 @@ class Type:
 
 class PhoneNumber():
 
-    def __init__(self, phone_number, type=None, uuid=None:
+    def __init__(self, phone_number, type=None, uuid=None):
         if uuid is None:
             self.uuid = uuid.uuid4()
         else:
@@ -65,11 +65,13 @@ class WorkPhoneNumber(PhoneNumber):
         super().__init__(phone_number, phone_type, uuid)
         self.phone_type = 'Work Phone'
 
+
 class HomePhoneNumber(PhoneNumber):
 
     def __init__(self, phone_number, phone_type, uuid=None):
         super().__init__(phone_number, phone_type, uuid)
         self.phone_type = 'Home Phone'
+
 
 class OtherPhoneNumber(PhoneNumber):
 
