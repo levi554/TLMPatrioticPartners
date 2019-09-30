@@ -9,6 +9,7 @@ name = "pypi"
 pytest = "~=5.0.1"
 pretty-errors = "*"
 "flake8" = "*"
+rope = "*"
 
 [requires]
 python_version = "3.7"
