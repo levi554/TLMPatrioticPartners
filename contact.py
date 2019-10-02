@@ -49,7 +49,13 @@ class Type:
 
 
 class Address():
-    pass
+
+    def __init__(self, street1, street2, city, state, zip_code):
+        self.street1 = street1
+        self.street2 = street2
+        self.city = city
+        self.state = state
+        self.zip_code = zip_code
 
 
 class PhoneNumber():
