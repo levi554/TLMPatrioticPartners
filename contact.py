@@ -48,35 +48,39 @@ class Type:
     pass
 
 
+class Address():
+    pass
+
+
 class PhoneNumber():
 
-    def __init__(self, phone_number, type=None, uuid=None):
-        if uuid is None:
-            self.uuid = uuid.uuid4()
+    def __init__(self, phone_number, phone_type=None, phone_number_id=None):
+        if phone_number_id is None:
+            self.phone_number_id = uuid.uuid4()
         else:
-            self.uuid = uuid
-        self.type = None
+            self.phone_number_id = phone_number_id
+        self.phone_type = None
         self.phone_number = phone_number
 
 
 class WorkPhoneNumber(PhoneNumber):
 
-    def __init__(self, phone_number, phone_type, uuid=None):
-        super().__init__(phone_number, phone_type, uuid)
+    def __init__(self, phone_number, phone_type=None, phone_number_id=None):
+        super().__init__(phone_number, phone_type, phone_number_id)
         self.phone_type = 'Work Phone'
 
 
 class HomePhoneNumber(PhoneNumber):
 
-    def __init__(self, phone_number, phone_type, uuid=None):
-        super().__init__(phone_number, phone_type, uuid)
+    def __init__(self, phone_number, phone_type=None, phone_number_id=None):
+        super().__init__(phone_number, phone_type, phone_number_id)
         self.phone_type = 'Home Phone'
 
 
 class OtherPhoneNumber(PhoneNumber):
 
-    def __init__(self, phone_number, phone_type, uuid=None):
-        super().__init__(phone_number, phone_type, uuid)
+    def __init__(self, phone_number, phone_type=None, phone_number_id=None):
+        super().__init__(phone_number, phone_type, phone_number_id)
         self.phone_type = 'Other Phone'
 
 
