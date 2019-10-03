@@ -58,3 +58,21 @@ def test_home_phone_type_information(home_phone):
 
 def test_other_phone_type_information(other_phone):
     assert other_phone.phone_type == 'other_phone'
+
+
+def test_work_phone_to_see_if_it_has_correct_information(work_phone):
+    assert work_phone.phone_number == '469.515.2222'
+
+
+def test_work_phone_id_is_not_blank_or_none_type(work_phone):
+    assert work_phone.phone_number_id != ''
+    assert work_phone.phone_number_id is not None
+
+
+def test_that_home_phone_has_the_correct_phone_number(home_phone):
+    assert home_phone.phone_number == '469.515.3333'
+
+
+def test_home_phone_id_is_not_blank_or_None_type(home_phone):
+    assert home_phone.phone_number_id != ''
+    assert home_phone.phone_number_id is not None
