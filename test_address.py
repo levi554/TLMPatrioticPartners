@@ -38,3 +38,4 @@ def test_address_is_not_blank(address):
     assert address.city is not ''
     assert address.state is not ''
     assert address.zip_code is not ''
+

@@ -24,3 +24,4 @@ def test_work_phone_number_in_contact():
     contact1 = Contact('Jonathan', 'Livesay', addresses=None, phone_numbers=work_phone_number, email_addresses=None)
 
     assert contact1.first_name == 'Jonathan'
+
