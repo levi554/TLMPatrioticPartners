@@ -41,4 +41,20 @@ def test_to_see_that_new_uuid_is_generated_if_phone_number_is_reset(phone):
     phone_id = phone.phone_number_id
     phone = None
     phone = PhoneNumber('469.515.1111')
-    assert phone_id is phone.phone_number_id
+    assert phone_id is not phone.phone_number_id
+
+
+def test_phone_type_information(phone):
+    assert phone.phone_type == 'phone_type'
+
+
+def test_work_phone_type_information(work_phone):
+    assert work_phone.phone_type == 'work_phone'
+
+
+def test_home_phone_type_information(home_phone):
+    assert home_phone.phone_type == 'home_phone'
+
+
+def test_other_phone_type_information(other_phone):
+    assert other_phone.phone_type == 'other_phone'

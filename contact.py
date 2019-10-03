@@ -65,7 +65,10 @@ class PhoneNumber():
             self.phone_number_id = uuid.uuid4()
         else:
             self.phone_number_id = phone_number_id
-        self.phone_type = None
+        if phone_type is None:
+            self.phone_type = 'phone_type'
+        else:
+            self.phone_type = phone_type
         self.phone_number = phone_number
 
 
@@ -73,21 +76,21 @@ class WorkPhoneNumber(PhoneNumber):
 
     def __init__(self, phone_number, phone_type=None, phone_number_id=None):
         super().__init__(phone_number, phone_type, phone_number_id)
-        self.phone_type = 'Work Phone'
+        self.phone_type = 'work_phone'
 
 
 class HomePhoneNumber(PhoneNumber):
 
     def __init__(self, phone_number, phone_type=None, phone_number_id=None):
         super().__init__(phone_number, phone_type, phone_number_id)
-        self.phone_type = 'Home Phone'
+        self.phone_type = 'home_phone'
 
 
 class OtherPhoneNumber(PhoneNumber):
 
     def __init__(self, phone_number, phone_type=None, phone_number_id=None):
         super().__init__(phone_number, phone_type, phone_number_id)
-        self.phone_type = 'Other Phone'
+        self.phone_type = 'other_phone'
 
 
 
