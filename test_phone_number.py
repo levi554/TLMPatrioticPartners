@@ -30,3 +30,15 @@ def test_phone_number_id_not_blank(phone):
     print(f'Phone Number UUID: {phone.phone_number_id}')
     assert phone.phone_number_id is not None
     assert phone.phone_number_id != ''
+
+
+def test_phone_number_id_does_not_match_id_from_another_phone_number(phone):
+    phone2 = PhoneNumber('469.853.1111')
+    assert phone.phone_number_id is not phone2.phone_number_id
+
+
+def test_to_see_that_new_uuid_is_generated_if_phone_number_is_reset(phone):
+    phone_id = phone.phone_number_id
+    phone = None
+    phone = PhoneNumber('469.515.1111')
+    assert phone_id is phone.phone_number_id
