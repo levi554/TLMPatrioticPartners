@@ -99,7 +99,13 @@ class Email:
         if email_address_id is None:
             self.email_address_id = uuid.uuid4
         else:
-            self.email_address_id = email_address_id        
+            self.email_address_id = email_address_id
         self.email_address = email_address
         self.email_address_type = 'email'
 
+
+class WorkEmail(Email):
+
+    def __init__(self, email_address, email_address_id):
+        super().__init__(email_address, email_address_id)
+        self.email_address_type = 'work_email'
