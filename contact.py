@@ -93,4 +93,13 @@ class OtherPhoneNumber(PhoneNumber):
         self.phone_type = 'other_phone'
 
 
+class Email:
+
+    def __init__(self, email_address, email_address_id=None):
+        if email_address_id is None:
+            self.email_address_id = uuid.uuid4
+        else:
+            self.email_address_id = email_address_id        
+        self.email_address = email_address
+        self.email_address_type = 'email'
 
