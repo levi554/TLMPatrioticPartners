@@ -1,5 +1,6 @@
 import pytest
-from contact import Person, Contact, WorkPhoneNumber, HomePhoneNumber, OtherPhoneNumber
+from contact import Person, Contact, WorkPhoneNumber
+from contact import Address, HomePhoneNumber, OtherPhoneNumber
 
 
 @pytest.fixture
@@ -16,6 +17,17 @@ def person2():
 def simple_contact():
     sc = Contact('Jonathan', 'Livesay', None, None, None)
     return sc
+
+@pytest.fixture
+def contact():
+    wp = WorkPhoneNumber('469.515.1111')
+    hp = HomePhoneNumber('469.515.2222')
+    op = OtherPhoneNumber('469.515.3333')
+    address = Address('6512 Briar Lake Trl', 'Suite 123', 'Sachse', 'TX', '75048')
+    email = None
+
+    c = Contact('Jonathan', 'Livesay', address, (wp, hp, op), email)
+    return c
 
 
 def test_creation_of_person(person1, person2):
