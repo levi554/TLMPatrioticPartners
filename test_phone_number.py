@@ -27,5 +27,6 @@ def test_phone_number(phone):
 
 
 def test_phone_number_id_not_blank(phone):
+    print(f'Phone Number UUID: {phone.phone_number_id}')
     assert phone.phone_number_id is not None
     assert phone.phone_number_id != ''
