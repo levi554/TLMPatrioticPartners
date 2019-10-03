@@ -10,14 +10,15 @@ class Person:
 
 class Contact(Person):
 
-    def __init__(self, first_name, last_name, addresses=None, phone_numbers=None, email_addresses=None):
+    def __init__(self, first_name, last_name,
+                 addresses=None, phone_numbers=None, email_addresses=None):
         super().__init__(first_name, last_name)
         if addresses is None:
             self.addresses = []
         else:
             self.addresses = addresses
 
-        if phone_numbers is None: 
+        if phone_numbers is None:
             self.phone_numbers = []
         else:
             self.phone_numbers = phone_numbers
@@ -48,7 +49,7 @@ class Type:
     pass
 
 
-class Address():
+class Address:
 
     def __init__(self, street1, street2, city, state, zip_code):
         self.street1 = street1

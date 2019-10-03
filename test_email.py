@@ -13,10 +13,12 @@ def work_email():
     wem = WorkEmail('jonathan.livesay@jnteam.org')
     return wem
 
+
 @pytest.fixture
 def home_email():
     hem = HomeEmail('jonl316@gmail.com')
     return hem
+
 
 @pytest.fixture
 def other_email():
@@ -38,3 +40,18 @@ def test_home_email_creation(home_email):
 
 def test_other_email_creation(other_email):
     assert other_email.email_address == 'jonathan.livesay@gmail.com'
+
+
+def test_home_email_has_an_id_is_not_blank_or_None(home_email):
+    assert home_email.email_address_id is not None
+    assert home_email.email_address_id != ''
+
+
+def test_work_email_has_an_id_is_not_blank_or_None(work_email):
+    assert work_email.email_address_id is not None
+    assert work_email.email_address_id != ''
+
+
+def test_other_email_has_an_id_is_not_blank_or_None(other_email):
+    assert other_email.email_address_id is not None
+    assert other_email.email_address_id != ''

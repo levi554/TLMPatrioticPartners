@@ -1,20 +1,25 @@
 import pytest
-from contact import PhoneNumber, WorkPhoneNumber, HomePhoneNumber, OtherPhoneNumber
+from contact import PhoneNumber, WorkPhoneNumber
+from contact import HomePhoneNumber, OtherPhoneNumber
+
 
 @pytest.fixture
 def phone():
     phone = PhoneNumber('469.515.1111')
     return phone
 
+
 @pytest.fixture
 def work_phone():
     work_phone = WorkPhoneNumber('469.515.2222')
     return work_phone
 
+
 @pytest.fixture
 def home_phone():
     home_phone = HomePhoneNumber('469.515.3333')
     return home_phone
+
 
 @pytest.fixture
 def other_phone():
