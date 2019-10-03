@@ -106,6 +106,19 @@ class Email:
 
 class WorkEmail(Email):
 
-    def __init__(self, email_address, email_address_id):
+    def __init__(self, email_address, email_address_id=None):
         super().__init__(email_address, email_address_id)
         self.email_address_type = 'work_email'
+
+
+class HomeEmail(Email):
+
+    def __init__(self, email_address, email_address_id=None):
+        super().__init__(email_address, email_address_id)
+        self.email_address_type = 'work_email'
+
+
+class OtherEmail(Email):
+    def __init__(self, email_address, email_address_id=None):
+        super().__init__(email_address, email_address_id)
+        self.email_address_type = 'other_email'

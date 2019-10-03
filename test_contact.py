@@ -43,9 +43,3 @@ def test_creation_of_simple_contact(simple_contact):
     assert simple_contact.phone_numbers == []
 
 
-def test_work_phone_number_in_contact():
-    work_phone_number = WorkPhoneNumber('469.515.9958')
-    contact1 = Contact('Jonathan', 'Livesay', addresses=None, phone_numbers=work_phone_number, email_addresses=None)
-
-    assert contact1.first_name == 'Jonathan'
-
